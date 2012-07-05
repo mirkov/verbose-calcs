@@ -1,0 +1,14 @@
+2012-07-05  Mirko Vukovic  <mirko.vukovic@us.tel.com>
+
+	* verbose-calcs.lisp (:compile-toplevel): Modified behavior to
+	include format statement within the binding itself.  This way, if
+	the calculation fails while establishing bindings, I will have
+	some output available.
+	(defvfun): Added header
+	(vlet): Renamed verbose-calcs into vlet and vlet*
+	(binding+echo): modified so that it prints binding as soon as it
+	is established
+	(binding+deferred-echo): This one accumulates print statements
+	into acc.  This allows all the print statements to be done at
+	once, sometimes after the bindings have been established
+

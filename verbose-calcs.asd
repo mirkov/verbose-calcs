@@ -2,7 +2,8 @@
 
 (asdf:defsystem #:verbose-calcs
   :serial t
-  :depends-on (#:lisp-unit)
+  :depends-on (#:alexandria
+	       #:lisp-unit)
   :components ((:file "package")
                (:file "verbose-calcs")))
 

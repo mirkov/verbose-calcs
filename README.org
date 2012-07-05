@@ -3,20 +3,27 @@
 * Introduction and Background
   This package provides functionality for defining calculations that
   at the same time generate textual output with their results.  It
-  provides two commands:
+  provides two sets commands:
   - ~vlet~ and ~vlet*~ establish and prints out bindings, and then
     evaluate the body
-  - ~defvfun~ is a ~defun~ that prints out argument values prior to
-    executing the body
+  - ~defvfun~ is a ~defun~ that prints out argument values and a
+    header prior to executing the body
 
-** ~vlet~ and ~vlet*~
-   This is a ~let(*)~-like environment.  It establishes bindings.  But
-   in addition, before executing ~body~, it prints out the value of
-   all the bindings.
+* ~vlet~ and ~vlet*~
+  This is a ~let(*)~-like environment.  It establishes bindings.  As
+  each binding is established, its value is printed out.
+  
+  If no bindings are established, ~body~ is executed inside a ~progn~.
 
-   If no bindings are established, ~body~ is executed inside a ~progn~.
+* ~defvfun~
+  Defines a function with keyword arguments only.  The defaults can be
+  specified when the function is defined.
+
+  Upon execution, the function prints its header and values of all
+  arguments.
+  
 
 * To do
   - Improve ~defvfun~'s documentation handling
   - Modify ~defvfun~ to print out the calculation result
-  - Consider adding a preamble to ~verbose-calcs~
+  - Consider adding a preamble to ~vlet~
