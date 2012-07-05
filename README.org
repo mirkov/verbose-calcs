@@ -1,0 +1,22 @@
+#+title: ~verbose-calcs~ package
+
+* Introduction and Background
+  This package provides functionality for defining calculations that
+  at the same time generate textual output with their results.  It
+  provides two commands:
+  - ~vlet~ and ~vlet*~ establish and prints out bindings, and then
+    evaluate the body
+  - ~defvfun~ is a ~defun~ that prints out argument values prior to
+    executing the body
+
+** ~vlet~ and ~vlet*~
+   This is a ~let(*)~-like environment.  It establishes bindings.  But
+   in addition, before executing ~body~, it prints out the value of
+   all the bindings.
+
+   If no bindings are established, ~body~ is executed inside a ~progn~.
+
+* To do
+  - Improve ~defvfun~'s documentation handling
+  - Modify ~defvfun~ to print out the calculation result
+  - Consider adding a preamble to ~verbose-calcs~
